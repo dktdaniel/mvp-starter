@@ -17,7 +17,6 @@ class Search extends React.Component {
   }
 
   search() {
-  	// console.log(this.state.url);
   	$.ajax({
   		url: '/search',
   		method: 'POST',
@@ -27,16 +26,18 @@ class Search extends React.Component {
   			term: this.state.term,
   		}),
       success: (data) => {
-        console.log('success!!!!', data);
         this.props.updateList(data);
       }
   	});
+    this.setState({
+      term: 'Enter activity and duration . . .'
+    });
   }
 
 	render() {
 		return (
 		  <form>
-		    <input type="text" onChange={this.grabText.bind(this)} value={this.state.url}/>
+		    <input type="text" onChange={this.grabText.bind(this)} value={this.state.term}/>
 		    <button type="button" onClick={this.search.bind(this)}> SUBMIT </button>
 		  </form>
 		)

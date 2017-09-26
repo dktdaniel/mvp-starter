@@ -54,20 +54,29 @@ app.post('/search', (req, res) => {
 		contentType: 'application/json',
 		dataType: 'json'
 
-		})
-		.then((result) => {
-			//save data to db
-			var mapped = result.data.exercises.map((resultItem) => {
-				return {
-					activity: resultItem.name,
-					duration: resultItem.duration_min,
-					calories: resultItem.nf_calories
-				}
-			});
-			mapped.map(item => {items.save(item)});
-			console.log('MAPPED!!!!', {mapped});
-			res.send({mapped});
+	})	
+	.then((result) => {
+		//save data to db
+		var mapped = result.data.exercises.map((resultItem) => {
+			return {
+				activity: resultItem.name,
+				duration: resultItem.duration_min,
+				calories: resultItem.nf_calories
+			}
 		});
+		return Promise.all(mapped.map(item => { return items.save(item)}))
+		//query db then res send results
+	})
+	.then(() => {
+		items.selectAll(function(err, data) {
+	    if(err) {
+	      res.sendStatus(500);
+	    } else {
+	    	console.log('haaaaaaayyyyyy', data);
+	      res.send(data);
+	    }
+	  });
+	});
  });
 
 app.listen(3000, function() {

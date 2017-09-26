@@ -29,7 +29,7 @@ class App extends React.Component {
 
   updateList(data) {
     this.setState({
-      data: data
+      items: data
     });
   }
 
