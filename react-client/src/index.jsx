@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
 import Search from './components/Search.jsx';
-// import db from '../../database-mongo/index.js';
+import Deserve from './components/Deserve.jsx';
+import GMap from './components/GMap.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -35,9 +36,11 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>How many calories</h1>
+      <h1>RESPONSIBILITEA</h1>
       <Search updateList={this.updateList.bind(this)}/>
       <List items={this.state.items}/>
+      <Deserve />
+      <GMap />
     </div>)
   }
 }

@@ -38,7 +38,7 @@ class Search extends React.Component {
 		return (
 		  <form>
 		    <input type="text" onChange={this.grabText.bind(this)} value={this.state.term}/>
-		    <button type="button" onClick={this.search.bind(this)}> SUBMIT </button>
+		    <button type="button" onClick={this.search.bind(this)} > SUBMIT </button>
 		  </form>
 		)
 	}

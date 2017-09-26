@@ -30,12 +30,8 @@ app.get('/items', function (req, res) {
 app.post('/search', (req, res) => {
 	// console.log('in search!');
 	// console.log(req.body);
-
 	var searchTerm = req.body.term;
-
 	//make ajax call to api
-
-	
 	axios({
 		url: 'https://trackapi.nutritionix.com/v2/natural/exercise',
 		method: 'POST',
@@ -53,7 +49,6 @@ app.post('/search', (req, res) => {
 		},
 		contentType: 'application/json',
 		dataType: 'json'
-
 	})	
 	.then((result) => {
 		//save data to db
@@ -72,7 +67,6 @@ app.post('/search', (req, res) => {
 	    if(err) {
 	      res.sendStatus(500);
 	    } else {
-	    	console.log('haaaaaaayyyyyy', data);
 	      res.send(data);
 	    }
 	  });

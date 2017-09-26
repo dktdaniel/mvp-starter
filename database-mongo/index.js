@@ -20,7 +20,6 @@ var itemSchema = mongoose.Schema({
 var Item = mongoose.model('Item', itemSchema);
 
 var save = (activity) => {
-  
   return new Item(activity).save((err, data) => {
     if (err) {
       console.log('error saving in db', err);
