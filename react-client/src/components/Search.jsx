@@ -1,12 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
+import { Input, Button } from 'reactstrap';
 
 
 class Search extends React.Component {
 	constructor(props) {
     super(props);
     this.state = { 
-      term: 'Enter activity and duration . . .'
+      term: 'enter activity and duration . . .'
     }
   }
 
@@ -14,6 +15,12 @@ class Search extends React.Component {
   	this.setState({
   		term: e.target.value
   	});
+  }
+
+  clearText(){
+    this.setState({
+      term: ''
+    });
   }
 
   search() {
@@ -30,15 +37,16 @@ class Search extends React.Component {
       }
   	});
     this.setState({
-      term: 'Enter activity and duration . . .'
+      term: 'enter activity and duration . . .'
     });
   }
 
 	render() {
 		return (
 		  <form>
-		    <input type="text" onChange={this.grabText.bind(this)} value={this.state.term}/>
-		    <button type="button" onClick={this.search.bind(this)} > SUBMIT </button>
+		    <Input type="text" onClick={this.clearText.bind(this)} onChange={this.grabText.bind(this)} value={this.state.term} block/>
+        <p></p>
+		    <Button type="button" onClick={this.search.bind(this)} outline color="info" size="lg" block> check calories </Button>
 		  </form>
 		)
 	}

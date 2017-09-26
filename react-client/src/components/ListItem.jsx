@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ListItem = ({item}) => (
-  <div>
-    { item.activity } - { item.calories } calories
-  </div>
+  <li>
+    { item.activity } ({ item.calories } calories)
+  </li>
 )
 
 export default ListItem;

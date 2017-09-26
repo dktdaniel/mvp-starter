@@ -1,8 +1,17 @@
 #map {
-    height: 500px;
-  }
-  html, body {
-    height: 500px;
-    margin: 0;
-    padding: 0;
-  }
+  height: 500px;
+}
+
+html, body {
+  height: 500px;
+  margin: 50px;
+  padding: 0;
+}
+
+#list {
+	margin-top: 20px;
+}
+
+#title {
+	margin-bottom: 20px;
+}

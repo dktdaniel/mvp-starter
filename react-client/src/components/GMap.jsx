@@ -1,7 +1,7 @@
 import React from 'react';
 
 const GMap = (props) => (
-  <div>MAP GOES HERE!!! HEHEHEHE</div>
+  <div></div>
 )
 
 export default GMap;
