@@ -10,8 +10,21 @@ html, body {
 
 #list {
 	margin-top: 20px;
+	color: #6999bf;
+	letter-spacing: 3px;
 }
 
 #title {
 	margin-bottom: 20px;
+	color: #6999bf;
+	letter-spacing: 3px;
+}
+
+.deserve {
+	/*color: #6999bf;*/
+	letter-spacing: 3px;
+}
+
+#gmap {
+	color: white;
 }

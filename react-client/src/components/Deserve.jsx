@@ -11,16 +11,15 @@ class Deserve extends React.Component {
   }
 
   componentDidMount() {
-  	$('#map').hide()
   }
 
   showMap() {
-  	$('#map').show()
+  	$('#gmap').hide()
   }
 
   render() {
   	return(
-  	<Button outline color="success" block size="lg" onClick={this.showMap}>drink 524 calories of sugary goodness</Button>
+  	<Button className="deserve" outline color="success" block size="lg" onClick={this.showMap}>drink 524 calories of sugary goodness</Button>
   	)
   }
 }

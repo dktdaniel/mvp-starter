@@ -39,7 +39,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-      <h1 id = "title">responsibiliTEA</h1>
+      <h1 id = "title">responsibili-tea</h1>
       <Search updateList={this.updateList.bind(this)}/>
       <List items={this.state.items}/>
       <Deserve />

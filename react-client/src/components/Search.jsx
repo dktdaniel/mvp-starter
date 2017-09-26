@@ -44,9 +44,9 @@ class Search extends React.Component {
 	render() {
 		return (
 		  <form>
-		    <Input type="text" onClick={this.clearText.bind(this)} onChange={this.grabText.bind(this)} value={this.state.term} block/>
+		    <Input className="deserve" type="text" onClick={this.clearText.bind(this)} onChange={this.grabText.bind(this)} value={this.state.term} block/>
         <p></p>
-		    <Button type="button" onClick={this.search.bind(this)} outline color="info" size="lg" block> check calories </Button>
+		    <Button type="button" onClick={this.search.bind(this)} outline color="info" size="lg" block className="deserve"> check calories </Button>
 		  </form>
 		)
 	}
