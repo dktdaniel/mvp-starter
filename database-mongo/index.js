@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/calories');
 
 var db = mongoose.connection;
 
@@ -12,11 +12,23 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+  activity: String,
+  duration: Number,
+  calories: Number
 });
 
 var Item = mongoose.model('Item', itemSchema);
+
+var save = (activity) => {
+  return new Item(activity).save((err, data) => {
+    if (err) {
+      console.log('error saving in db', err);
+    }
+  })
+  .then((result)=> {
+    console.log('*****', result);
+  });
+};
 
 var selectAll = function(callback) {
   Item.find({}, function(err, items) {
@@ -29,3 +41,4 @@ var selectAll = function(callback) {
 };
 
 module.exports.selectAll = selectAll;
+module.exports.save = save;

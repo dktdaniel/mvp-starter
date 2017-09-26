@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ListItem = (props) => (
+const ListItem = ({item}) => (
   <div>
-    { props.item.description }
+    { item.activity } - { item.calories } calories
   </div>
 )
 

@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
+import Search from './components/Search.jsx';
+// import db from '../../database-mongo/index.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,9 +27,16 @@ class App extends React.Component {
     });
   }
 
+  updateList(data) {
+    this.setState({
+      data: data
+    });
+  }
+
   render () {
     return (<div>
-      <h1>Item List</h1>
+      <h1>How many calories</h1>
+      <Search updateList={this.updateList.bind(this)}/>
       <List items={this.state.items}/>
     </div>)
   }
